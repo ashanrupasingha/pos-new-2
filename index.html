@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS System</title>
+    <link rel="stylesheet" href="assets/styles/normalize.css">
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!--  Navbar -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow">
+
+    <div class="container">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#"><span id="brand_first_word">Order</span>Pulse</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" id="home_nav">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="customer_nav">Customer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="item_nav">Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="order_nav">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="login_nav">Log In</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!-- Login Page -->
+
+<div id="login_content">
+
+   <div  class="d-flex flex-column justify-content-center align-items-center vh-100">
+    <!-- Logo Image -->
+    <div class="mb-4">
+        <img src="assets/image/login.png" id="logo" alt="Cozy Coffee Logo">
+    </div>
+
+
+    <!-- Login Form -->
+
+    <div class="col-md-4">
+        <div class="card loginCard">
+            <div class="card-body login_cover">
+                <form id="loginForm">
+                    <h5 id="heading1" class="text-center">Login</h5>
+                    <div class="mb-3" id="field1">
+                        <label for="inputEmail" class="form-label labels">Email address</label>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-2" id="field2">
+                        <label for="inputPassword" class="form-label labels">Password</label>
+                        <input type="password" class="form-control" id="inputPassword">
+                    </div>
+                </form>
+
+                <div class="d-grid gap-2 col-12 col-md-6 col-lg-4 mx-auto">
+
+                    <button type="button" value="Login" id="login_btn" class="btn btn-primary">Login</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- Home Page -->
+
+<div class="row row-cols-1 row-cols-md-3 g-4" id="home_content">
+    <div class="col">
+        <div class="card h-100 countSection">
+            <div class="card-body">
+                <h5 class="card-title text-center countHeading">CUSTOMERS</h5>
+                <h5 class="card-title text-center count" id="customer-count"></h5>
+                <img src="assets/images/customer.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100 countSection">
+
+            <div class="card-body">
+                <h5 class="card-title text-center countHeading">ORDERS</h5>
+                <h5 class="card-title text-center count" id="order-count"></h5>
+                <img src="assets/images/order.png">
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 countSection">
+
+            <div class="card-body">
+                <h5 class="card-title text-center countHeading">ITEMS</h5>
+                <h5 class="card-title text-center count" id="item-count"></h5>
+                <img src="assets/images/item.png">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Customer Page -->
+
+<div class="card backgroundCover" id="customer_content">
+
+    <div class="card-body">
+
+        <h4 class="text-center heading">Manage Customers</h4>
+
+        <div class="container_fluid">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 card_cover">
+                <div class="col">
+
+                    <!-- Customer Form -->
+
+                    <div class="card forms">
+                        <div class="card-body details">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="customer_id" class="form-label">Customer ID</label>
+                                    <input type="text" class="form-control" id="customer_id" aria-describedby="emailHelp">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="customer_name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="customer_name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="address">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contact" class="form-label">Contact No</label>
+                                    <input type="text" class="form-control" id="contact">
+                                </div>
+                                <button type="button" class="btn btn-success" id="cusSaveBtn">Save</button>
+                                <button type="button" class="btn btn-success" id="cusUpdateBtn">Update</button>
+                                <button type="button" class="btn btn-success" id="cusDeleteBtn">Delete</button>
+                                <button type="button" class="btn btn-success" id="cusClearBtn">Clear</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <!-- Search Form -->
+
+                    <div class="card" id="customer_table">
+                        <div class="card-body">
+
+                            <div class="row" >
+                                <div class="col-6 col-md-4 searchForm">
+                                    <input type="text" class="form-control" id="customer_search" aria-describedby="idHelp" placeholder="Customer Name">
+                                    <button type="button" class="btn btn-warning" id="cusSearchBtn">Search</button>
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="table-responsive">
+
+                                <!-- Customer table -->
+
+                                <table class="table table-bordered tableSection table-secondary">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Customer ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Contact No</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="customerTableBody">
+<!--                                    <tr>-->
+<!--                                        <th scope="row">1</th>-->
+<!--                                        <td>Saduni</td>-->
+<!--                                        <td>Galle</td>-->
+<!--                                        <td>saduni@gmail.com</td>-->
+<!--                                        <td>0748901256</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <th scope="row">2</th>-->
+<!--                                        <td>Amal</td>-->
+<!--                                        <td>Kandy</td>-->
+<!--                                        <td>amal@gmail.com</td>-->
+<!--                                        <td>0725001256</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <th scope="row">2</th>-->
+<!--                                        <td>Dilan</td>-->
+<!--                                        <td>Panadura</td>-->
+<!--                                        <td>dilan@gmail.com</td>-->
+<!--                                        <td>0718456256</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <th scope="row">2</th>-->
+<!--                                        <td>Nuwani</td>-->
+<!--                                        <td>Matara</td>-->
+<!--                                        <td>nuwani@gmail.com</td>-->
+<!--                                        <td>0768904566</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <th scope="row">2</th>-->
+<!--                                        <td>Udari</td>-->
+<!--                                        <td>Kandy</td>-->
+<!--                                        <td>udari@gmail.com</td>-->
+<!--                                        <td>0768904566</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <th scope="row">2</th>-->
+<!--                                        <td>Kavindu</td>-->
+<!--                                        <td>Panadura</td>-->
+<!--                                        <td>kavindu@gmail.com</td>-->
+<!--                                        <td>0768904566</td>-->
+<!--                                    </tr>-->
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Item Content -->
+
+
+  <div class="card backgroundCover" id="item_content">
+
+    <div class="card-body">
+
+        <h4 class="text-center heading">Manage Items</h4>
+
+
+        <div class="container_fluid">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 card_cover">
+                <div class="col">
+                    <!-- Item Form -->
+
+                    <div class="card">
+                        <div class="card-body details">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="item_code" class="form-label">Item Code</label>
+                                    <input type="text" class="form-control" id="item_code" aria-describedby="emailHelp">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <input type="text" class="form-control" id="description">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">Unit Price</label>
+                                    <input type="text" class="form-control" id="price">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="qty" class="form-label">Quantity</label>
+                                    <input type="text" class="form-control" id="qty">
+                                </div>
+
+                                <button type="button" class="btn btn-success" id="itemSaveBtn">Save</button>
+                                <button type="button" class="btn btn-success" id="itemUpdateBtn">Update</button>
+                                <button type="button" class="btn btn-success" id="itemDeleteBtn">Delete</button>
+                                <button type="button" class="btn btn-success" id="itemClearBtn">Clear</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+
+                    <!-- Search Form -->
+
+                    <div class="card">
+                        <div class="card-body details">
+
+                            <div class="row" >
+                                <div class="col-6 col-md-4 searchForm">
+                                    <input type="text" class="form-control" id="item_search" aria-describedby="idHelp" placeholder="Item Name">
+                                    <button type="button" class="btn btn-warning" id="itemSearchBtn">Search</button>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <!-- Item Table -->
+
+                            <div class="table-responsive">
+
+                                <table class="table table-bordered tableSection table-secondary">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Item Code</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Unit Price</th>
+                                        <th scope="col">Quantity</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody id="itemTableBody">
+<!--                                    <tr>-->
+<!--                                        <td>I001</td>-->
+<!--                                        <td>Cappucino</td>-->
+<!--                                        <td>500.00</td>-->
+<!--                                        <td>100</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>I002</td>-->
+<!--                                        <td>Coffee Latte</td>-->
+<!--                                        <td>800.00</td>-->
+<!--                                        <td>150</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>I003</td>-->
+<!--                                        <td>Americano</td>-->
+<!--                                        <td>650.00</td>-->
+<!--                                        <td>220</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>I004</td>-->
+<!--                                        <td>Mocha</td>-->
+<!--                                        <td>700.00</td>-->
+<!--                                        <td>167</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>I005</td>-->
+<!--                                        <td>Iced Coffee</td>-->
+<!--                                        <td>430.00</td>-->
+<!--                                        <td>190</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>I006</td>-->
+<!--                                        <td>Macchiato</td>-->
+<!--                                        <td>670.00</td>-->
+<!--                                        <td>300</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>I007</td>-->
+<!--                                        <td>Nitro Coffee</td>-->
+<!--                                        <td>900.00</td>-->
+<!--                                        <td>400</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>I008</td>-->
+<!--                                        <td>Espresso</td>-->
+<!--                                        <td>880.00</td>-->
+<!--                                        <td>400</td>-->
+<!--                                    </tr>-->
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Order Page -->
+
+<div class="card backgroundCover" id="order_content">
+
+    <div class="card-body">
+
+        <h4 class="text-center heading">Manage Orders</h4>
+
+        <div id="details">
+
+            <div class="row justify-content-center">
+                <div class="col-sm-7 mb-3 mb-sm-0">
+
+                    <!-- Invoice Details -->
+
+                    <div class="card orderForms">
+                        <div class="card-body">
+                            <h5 class="od_headings text-center">Invoice Details</h5>
+
+                            <label for="orderId" class="form-label" id="odId">Order ID</label>
+                            <input type="text" class="form-control" id="orderId" aria-describedby="emailHelp" placeholder="O001">
+
+                            <label for="date" class="form-label" id="od_date">Date</label>
+                            <input type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="O001">
+                            <label id="cusId">Customer ID</label>
+                            <select class="form-select" aria-label="Default select example" id="customers">
+                                <option >ID</option>
+                            </select>
+
+                            <label for="customerName" class="form-label" id="cuName">Customer Name</label>
+                            <input type="text" class="form-control" id="customerName" aria-describedby="emailHelp" placeholder="Enter name">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row justify-content-center">
+                <div class="col-sm-7 mb-3 mb-sm-0">
+
+                    <!-- Item Details -->
+
+                    <div class="card orderForms">
+                        <div class="card-body">
+                            <h5 class="od_headings text-center">Item Details</h5>
+
+                            <label id="iCode">Item Code</label>
+                            <select class="form-select" aria-label="Default select example" id="items">
+                                <option>ID</option>
+
+                            </select>
+                            <label for="itemName" class="form-label" id="iName">Description</label>
+                            <input type="text" class="form-control" id="itemName" aria-describedby="emailHelp" >
+                            <label for="itemPrice" class="form-label" id="unitPrice">Unit Price</label>
+                            <input type="text" class="form-control" id="itemPrice" aria-describedby="emailHelp">
+                            <label for="itemQty" class="form-label" id="qty2">Qty On Hand</label>
+                            <input type="text" class="form-control" id="itemQtyOnHand" aria-describedby="emailHelp" >
+                            <label for="itemQty" class="form-label" id="qtyLbl">Quantity</label>
+                            <input type="text" class="form-control" id="itemQty" aria-describedby="emailHelp"><br>
+                            <button type="button" class="btn btn-success" id="cartBtn">Add to cart</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+<!-- Order Table -->
+
+        <div class="table-responsive orderTbl">
+
+            <table class="table table-bordered tableSection table-secondary">
+                <thead>
+                <tr class="table-dark">
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                </tr>
+                </thead>
+                <tbody id="orderTableBody">
+
+                    <tr></tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <div id="od_buttons">
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto" id="totalForm">
+                    <label for="inputTotal" class="col-form-label">Total</label>
+                    <input type="text" id="inputTotal" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+            <button type="button" class="btn btn-success" id="order_btn">Place Order</button>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+
+
+<!-- Single Page Apply -->
+
+<script>
+
+
+    $("#customer_content").hide();
+    $("#item_content").hide();
+    $("#order_content").hide();
+    $("#login_content").show();
+    $(".navbar").hide();
+    $("#home_content").hide();
+
+
+    $("#home_nav").on("click" ,function (){
+        $("#home_content").show();
+        $("#customer_content").hide();
+        $("#item_content").hide();
+        $("#order_content").hide();
+        $("#login_content").hide();
+    });
+
+    $("#customer_nav").on("click" ,function (){
+        $("#customer_content").show();
+        $("#home_content").hide();
+        $("#item_content").hide();
+        $("#order_content").hide();
+        $("#login_content").hide();
+    });
+
+    $("#item_nav").on("click",function (){
+        $("#item_content").show();
+        $("#customer_content").hide();
+        $("#home_content").hide();
+        $("#login_content").hide();
+        $("#order_content").hide();
+    });
+
+    $("#order_nav").on("click",function (){
+        $("#order_content").show();
+        $("#item_content").hide();
+        $("#customer_content").hide();
+        $("#home_content").hide();
+        $("#login_content").hide();
+
+    });
+
+    $("#login_nav").on("click",function (){
+        $("#login_content").show();
+        $(".navbar").hide();
+        $("#item_content").hide();
+        $("#customer_content").hide();
+        $("#home_content").hide();
+        $("#order_content").hide();
+
+    });
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
+<script type="module" src="controller/LoginController.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
